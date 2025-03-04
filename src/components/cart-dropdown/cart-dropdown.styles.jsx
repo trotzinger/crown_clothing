@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+import {
+  BaseButton,
+  GoogleSignInButton,
+  InvertedButton,
+} from "../button/button.styles";
+
 export const CartDropdownContainer = styled.div`
   position: absolute;
   width: 240px;
@@ -13,10 +19,21 @@ export const CartDropdownContainer = styled.div`
   right: 40px;
   z-index: 5;
 
-  .empty-message {
-    font-size: 18px;
-    margin: 50px auto;
+  ${BaseButton},
+  ${GoogleSignInButton},
+  ${InvertedButton} {
+    margin-top: auto;
+    font-size: 12px; // Smaller font size
+    padding: 0 10px; // Adjust horizontal padding
+    white-space: nowrap; // Prevent text wrapping
+    min-height: 50px; // Ensure consistent height
+    width: 100%; // Take full width of container
   }
+`;
+
+export const EmptyMessage = styled.span`
+  font-size: 18px;
+  margin: 50px auto;
 `;
 
 export const CartItems = styled.div`
@@ -25,10 +42,3 @@ export const CartItems = styled.div`
   flex-direction: column;
   overflow: scroll;
 `;
-
-// button {
-//   width: 100%; // Make button take full width of container
-//   margin-top: 10px;
-//   white-space: nowrap; // Prevent text from wrapping
-//   font-size: 14px; // Reduce font size if needed
-// }
