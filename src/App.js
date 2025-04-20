@@ -32,14 +32,6 @@ const App = () => {
     return unsubscribe;
   }, []);
 
-  useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoryMap = await getCategoriesAndDocuments();
-      dispatch(setCategoriesMap(categoryMap));
-    };
-    getCategoriesMap();
-  }, []);
-
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
